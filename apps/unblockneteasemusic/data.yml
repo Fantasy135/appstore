@@ -1,12 +1,12 @@
-name: UnblockNeteaseMusic
+name: NeteaseMusic
 tags:
     - 工具
 title: 解锁网易云音乐客户端变灰歌曲
 type: 工具
 description: 解锁网易云音乐客户端变灰歌曲
 additionalProperties:
-    key: unblockneteasemusic
-    name: UnblockNeteaseMusic
+    key: neteasemusic
+    name: NeteaseMusic
     tags:
         - Tool
     shortDescZh: 解锁网易云音乐客户端变灰歌曲
