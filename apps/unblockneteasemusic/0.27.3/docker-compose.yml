@@ -21,7 +21,7 @@ services:
       # 激活故障的 Netease HTTPDNS 查询（不建议）
       - ENABLE_HTTPDNS=false
       # 屏蔽应用内部分广告
-      - BLOCK_ADS=true
+      - BLOCK_ADS=false
       # 禁用更新检测
       - DISABLE_UPGRADE_CHECK=true
       # 激活开发模式。需要自己用 `yarn` 安装依赖 (dependencies)
@@ -35,11 +35,11 @@ services:
       # 允许的最低源音质，小于该值将被替换
       - MIN_BR=320000
       # 选择所有音源中的最高码率替换音频
-      - SELECT_MAX_BR=false
+      - SELECT_MAX_BR=true
       # 日志输出等级。请见〈日志等级〉部分。
       - LOG_LEVEL=debug
       # 从 Pino 端设置日志输出的文件位置。也可以用 `*sh` 的输出重导向功能 (`node app.js >> app.log`) 代替
-      - LOG_FILE=app.log
+      # - LOG_FILE=app.log
       # JOOX 音源的 wmid 和 session_key cookie
       #- JOOX_COOKIE="wmid=<your_wmid>; session_key=<your_session_key>"
       # 酷我音源的 CSRF Token
