@@ -9,7 +9,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
     volumes:
-      - "./data/zfile-pro/db:/root/.zfile-v4/db"
+      - "./data/db:/root/zfile-pro/.zfile-v4/db"
       - "./data/logs:/root/zfile-pro/.zfile-v4/logs"
       - "./data/mnt:/data/zfile-pro/file"
     labels:  
