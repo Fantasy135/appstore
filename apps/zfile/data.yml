@@ -5,8 +5,8 @@ title: 基于 Java 的在线网盘程序
 type: 云存储
 description: 基于 Java 的在线网盘程序
 additionalProperties:
-    key: zfile
-    name: ZFile
+    key: zfile-pro
+    name: ZFile-pro
     tags:
         - Storage
     shortDescZh: 基于 Java 的在线网盘程序
