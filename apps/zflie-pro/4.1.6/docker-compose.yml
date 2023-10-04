@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 services:
   zfile:
     image: zhaojun1998/zfile-pro:4.1.6
