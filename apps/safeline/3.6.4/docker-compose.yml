@@ -1,0 +1,111 @@
+version: '3'
+services:
+  safeline-postgres:
+    container_name: ${CONTAINER_NAME}-postgres
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.232
+    image: postgres:15.4-bookworm
+    volumes:
+      - ${SAFELINE_DIR}/resources/postgres/data:/var/lib/postgresql/data
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - POSTGRES_USER=safeline-ce
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    cap_drop:
+      - net_raw
+    command: [postgres, -c, max_connections=200]
+    labels:
+      createdBy: Apps
+
+  safeline-management:
+    container_name: ${CONTAINER_NAME}-mgt-api
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.234
+    image: chaitin/safeline-mgt-api:3.6.4
+    volumes:
+      - ${SAFELINE_DIR}/resources/management:/resources/management
+      - ${SAFELINE_DIR}/resources/nginx:/resources/nginx
+      - ${SAFELINE_DIR}/logs:/logs
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - ${PANEL_APP_PORT_HTTP:-9443}:1443
+    environment:
+      - MANAGEMENT_RESOURCES_DIR=/resources/management
+      - NGINX_RESOURCES_DIR=/resources/nginx
+      - DATABASE_URL=postgres://safeline-ce:${POSTGRES_PASSWORD}@safeline-postgres/safeline-ce
+      - MARIO_URL=http://safeline-mario:3335
+      - DETECTOR_URL=http://safeline-detector:8001
+      - MANAGEMENT_LOGS_DIR=/logs/management
+    cap_drop:
+      - net_raw
+    labels:
+      createdBy: Apps
+
+  safeline-detector:
+    container_name: ${CONTAINER_NAME}-detector
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.235
+    image: chaitin/safeline-detector:3.6.4
+    volumes:
+      - ${SAFELINE_DIR}/resources/detector:/resources/detector
+      - ${SAFELINE_DIR}/logs/detector:/logs/detector
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - ${PANEL_APP_PORT_HTTP2}:8000
+    environment:
+      - LOG_DIR=/logs/detector
+    cap_drop:
+      - net_raw
+    labels:
+      createdBy: Apps
+
+  safeline-mario:
+    container_name: ${CONTAINER_NAME}-mario
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.236
+    image: chaitin/safeline-mario:3.6.4
+    volumes:
+      - ${SAFELINE_DIR}/resources/mario:/resources/mario
+      - ${SAFELINE_DIR}/logs/mario:/logs/mario
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - LOG_DIR=/logs/mario
+      - GOGC=100
+      - DATABASE_URL=postgres://safeline-ce:${POSTGRES_PASSWORD}@safeline-postgres/safeline-ce
+      - REDIS_URL=redis://:${PANEL_REDIS_ROOT_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}/2
+    cap_drop:
+      - net_raw
+    labels:
+      createdBy: Apps
+
+  safeline-tengine:
+    container_name: ${CONTAINER_NAME}-tengine
+    restart: always
+    image: chaitin/safeline-tengine:3.6.4
+    volumes:
+      - ${SAFELINE_DIR}/resources/nginx:/etc/nginx
+      - ${SAFELINE_DIR}/resources/management:/resources/management
+      - ${SAFELINE_DIR}/resources/detector:/resources/detector
+      - ${SAFELINE_DIR}/logs/nginx:/var/log/nginx
+      - /etc/localtime:/etc/localtime:ro
+      - ${SAFELINE_DIR}/resources/cache:/usr/local/nginx/cache
+      - /etc/resolv.conf:/etc/resolv.conf
+    environment:
+      - MGT_ADDR=${SUBNET_PREFIX}.234:9002
+    ulimits:
+      nofile: 131072
+    network_mode: host
+    labels:
+      createdBy: Apps
+
+networks:
+  1panel-network:
+    external: true
