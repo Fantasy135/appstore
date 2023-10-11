@@ -5,7 +5,8 @@ services:
     restart: always
     networks:
       1panel-network:
-        ipv4_address: ${SUBNET_PREFIX}.232
+      safeline-ce:
+        ipv4_address: ${SUBNET_PREFIX}.2
     image: postgres:15.4-bookworm
     volumes:
       - ${SAFELINE_DIR}/resources/postgres/data:/var/lib/postgresql/data
@@ -24,8 +25,9 @@ services:
     restart: always
     networks:
       1panel-network:
-        ipv4_address: ${SUBNET_PREFIX}.234
-    image: chaitin/safeline-mgt-api:3.6.4
+      safeline-ce:
+        ipv4_address: ${SUBNET_PREFIX}.4
+    image: chaitin/safeline-mgt-api:latest
     volumes:
       - ${SAFELINE_DIR}/resources/management:/resources/management
       - ${SAFELINE_DIR}/resources/nginx:/resources/nginx
@@ -50,14 +52,13 @@ services:
     restart: always
     networks:
       1panel-network:
-        ipv4_address: ${SUBNET_PREFIX}.235
-    image: chaitin/safeline-detector:3.6.4
+      safeline-ce:
+        ipv4_address: ${SUBNET_PREFIX}.5
+    image: chaitin/safeline-detector:latest
     volumes:
       - ${SAFELINE_DIR}/resources/detector:/resources/detector
       - ${SAFELINE_DIR}/logs/detector:/logs/detector
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - ${PANEL_APP_PORT_HTTP2}:8000
     environment:
       - LOG_DIR=/logs/detector
     cap_drop:
@@ -70,8 +71,9 @@ services:
     restart: always
     networks:
       1panel-network:
-        ipv4_address: ${SUBNET_PREFIX}.236
-    image: chaitin/safeline-mario:3.6.4
+      safeline-ce:
+        ipv4_address: ${SUBNET_PREFIX}.6
+    image: chaitin/safeline-mario:latest
     volumes:
       - ${SAFELINE_DIR}/resources/mario:/resources/mario
       - ${SAFELINE_DIR}/logs/mario:/logs/mario
@@ -89,7 +91,7 @@ services:
   safeline-tengine:
     container_name: ${CONTAINER_NAME}-tengine
     restart: always
-    image: chaitin/safeline-tengine:3.6.4
+    image: chaitin/safeline-tengine:latest
     volumes:
       - ${SAFELINE_DIR}/resources/nginx:/etc/nginx
       - ${SAFELINE_DIR}/resources/management:/resources/management
@@ -99,7 +101,7 @@ services:
       - ${SAFELINE_DIR}/resources/cache:/usr/local/nginx/cache
       - /etc/resolv.conf:/etc/resolv.conf
     environment:
-      - MGT_ADDR=${SUBNET_PREFIX}.234:9002
+      - MGT_ADDR=${SUBNET_PREFIX}.4:9002
     ulimits:
       nofile: 131072
     network_mode: host
@@ -109,3 +111,13 @@ services:
 networks:
   1panel-network:
     external: true
+  safeline-ce:
+    name: safeline-ce
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - gateway: ${SUBNET_PREFIX:?SUBNET_PREFIX required}.1
+          subnet: ${SUBNET_PREFIX}.0/24
+    driver_opts:
+      com.docker.network.bridge.name: safeline-ce

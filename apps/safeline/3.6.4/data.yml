@@ -55,8 +55,7 @@ additionalProperties:
       labelZh: 数据存放文件夹
       required: true
       type: text
-    - default: 172.18.0
-      #disabled: true
+    - default: 169.254.0
       edit: true
       envKey: SUBNET_PREFIX
       labelEn: Subnet prefix
