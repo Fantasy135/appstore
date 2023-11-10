@@ -14,19 +14,19 @@ additionalProperties:
       labelZh: 访问密码，可选，可以使用逗号隔开多个密码
       rule: paramComplexity
       type: password
-    - default: chatgpt
+    - default: ""
       envKey: BASE_URL
       labelEn: Override openai api request base url
       labelZh: OpenAI 接口 URL
       rule: paramExtUrl
       type: text
-    - default: chatgpt
+    - default: ""
       envKey: OPENAI_ORG_ID
       labelEn: Specify OpenAI organization ID.
       labelZh: 指定 OpenAI 中的组织 ID
       rule: paramComplexity
       type: text
-    - default: chatgpt
+    - default: ""
       envKey: HIDE_USER_API_KEY
       labelEn: If you do not want users to input their own API key, set this value to 1
       labelZh: 用户自行填入 API Key
@@ -37,7 +37,7 @@ additionalProperties:
           value: ""
         - label: False
           value: "1"
-    - default: chatgpt
+    - default: ""
       envKey: DISABLE_GPT4
       labelEn: If you do not want users to use GPT-4, set this value to 1
       labelZh: 用户使用 GPT-4
@@ -48,7 +48,7 @@ additionalProperties:
           value: ""
         - label: False
           value: "1"
-    - default: chatgpt
+    - default: ""
       envKey: ENABLE_BALANCE_QUERY
       labelEn: If you do want users to query balance, set this value to 1, or you should set it to 0
       labelZh: 启用余额查询功能
@@ -59,7 +59,7 @@ additionalProperties:
           value: "1"
         - label: False
           value: ""
-    - default: chatgpt
+    - default: ""
       envKey: DISABLE_FAST_LINK
       labelEn: If you want to disable parse settings from url, set this to 1
       labelZh: 从链接解析预制设置
@@ -70,7 +70,7 @@ additionalProperties:
           value: "1"
         - label: False
           value: ""
-    - default: chatgpt
+    - default: ""
       envKey: CUSTOM_MODELS
       labelEn: To control custom models, use + to add a custom model, use - to hide a model, separated by comma
       labelZh: 用来控制模型列表，使用 + 增加一个模型，使用 - 来隐藏一个模型，用英文逗号隔开
