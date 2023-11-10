@@ -33,7 +33,6 @@ additionalProperties:
       labelEn: If you do not want users to input their own API key, set this value to 1
       labelZh: 用户自行填入 API Key
       required: true
-      rule: paramCommon
       type: select
       values:
         - label: True
@@ -45,7 +44,6 @@ additionalProperties:
       labelEn: If you do not want users to use GPT-4, set this value to 1
       labelZh: 用户使用 GPT-4
       required: true
-      rule: paramCommon
       type: select
       values:
         - label: True
@@ -57,7 +55,6 @@ additionalProperties:
       labelEn: If you do want users to query balance, set this value to 1, or you should set it to 0
       labelZh: 启用余额查询功能
       required: true
-      rule: paramCommon
       type: select
       values:
         - label: True
