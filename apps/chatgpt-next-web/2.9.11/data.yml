@@ -66,7 +66,6 @@ additionalProperties:
       labelEn: If you want to disable parse settings from url, set this to 1
       labelZh: 从链接解析预制设置
       required: true
-      rule: paramCommon
       type: select
       values:
         - label: True
