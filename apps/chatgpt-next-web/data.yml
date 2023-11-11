@@ -1,16 +1,16 @@
-name: chatgpt-next-web
+name: ChatGPT-next-web
 tags:
   - 实用工具
-title: chatgpt
+title: ChatGPT-next-web
 type: 工具
-description: openai
+description: 实用工具
 additionalProperties:
-  key: chatgpt
-  name: ChatGPT
+  key: ChatGPT-next-web
+  name: ChatGPT-next-web
   tags:
     - Tool
-  shortDescZh: openai
-  shortDescEn: openai
+  shortDescZh: ChatGPT-next-web
+  shortDescEn: ChatGPT-next-web
   type: tool
   crossVersionUpdate: true
   limit: 0
