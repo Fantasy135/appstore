@@ -5,7 +5,7 @@ title: ChatGPT-next-web
 type: 工具
 description: 实用工具
 additionalProperties:
-  key: ChatGPT-next-web
+  key: ChatGPTNextWeb
   name: ChatGPT-next-web
   tags:
     - Tool
