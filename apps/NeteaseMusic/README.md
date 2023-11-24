@@ -28,14 +28,14 @@
 #### 安装成依赖
 
 ```bash
-npm install @neteasemusic/server
-yarn add @neteasemusic/server # for Yarn users
+npm install @NeteaseMusic/server
+yarn add @NeteaseMusic/server # for Yarn users
 ```
 
 #### 用 NPX 运行
 
 ```bash
-npx -p @neteasemusic/server neteasemusic
+npx -p @NeteaseMusic/server NeteaseMusic
 ```
 
 ### 注册成 Windows 服务
@@ -137,8 +137,8 @@ DEVELOPMENT=true yarn node app.js
 ### 配置参数
 
 ```bash
-$ neteasemusic -h
-usage: neteasemusic [-v] [-p http[:https]] [-a address] [-u url] [-f host]
+$ NeteaseMusic -h
+usage: NeteaseMusic [-v] [-p http[:https]] [-a address] [-u url] [-f host]
                            [-o source [source ...]] [-t token] [-e url] [-s]
                            [-h]
 
@@ -269,7 +269,7 @@ PAC 自动代理脚本地址 `http://<Server Name:PORT>/proxy.pac`
 作为依赖库使用
 
 ```javascript
-const match = require('@neteasemusic/server');
+const match = require('@NeteaseMusic/server');
 
 /**
  * Set proxy or hosts if needed

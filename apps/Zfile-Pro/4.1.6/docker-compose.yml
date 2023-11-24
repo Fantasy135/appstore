@@ -9,9 +9,9 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
     volumes:
-      - '/root/zfile-pro/db:/root/.zfile-v4/db'
-      - '/root/zfile-pro/logs:/root/.zfile-v4/logs'
-      - '/root/zfile-pro/file:/data/file'
+      - '/root/Zfile-Pro/db:/root/.zfile-v4/db'
+      - '/root/Zfile-Pro/logs:/root/.zfile-v4/logs'
+      - '/root/Zfile-Pro/file:/data/file'
     labels:
       createdBy: "Apps"
 networks:

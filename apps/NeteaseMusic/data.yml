@@ -5,7 +5,7 @@ title: 解锁网易云音乐客户端变灰歌曲
 type: 工具
 description: 解锁网易云音乐客户端变灰歌曲
 additionalProperties:
-    key: neteasemusic
+    key: NeteaseMusic
     name: NeteaseMusic
     tags:
         - Tool

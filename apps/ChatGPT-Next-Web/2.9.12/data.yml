@@ -3,21 +3,21 @@ additionalProperties:
     - default: ""
       edit: true
       envKey: OPENAI_API_KEY
-      labelEn: Your openai api key
-      labelZh: OpanAI 密钥
+      labelEn: Your openai api key, join multiple api keys with comma.
+      labelZh: OpanAI 密钥，用逗号隔开多个
       required: true
       rule: paramComplexity
       type: password
     - default: chatgpt
       envKey: CODE
-      labelEn: Access password, separated by comma
-      labelZh: 访问密码，可以使用逗号隔开多个密码
+      labelEn: Access password, separated by comma.
+      labelZh: 访问密码，用逗号隔开多个密码
       required: true
       rule: paramComplexity
       type: password
     - default: "https://api.openai.com"
       envKey: BASE_URL
-      labelEn: Override openai api request base url
+      labelEn: Override openai api request base url.
       labelZh: OpenAI 接口 URL
       required: true
       rule: paramExtUrl
@@ -36,7 +36,7 @@ additionalProperties:
       type: select
       values:
         - label: True
-          value: "0"
+          value: " "
         - label: False
           value: "1"
     - default: ""
@@ -47,7 +47,7 @@ additionalProperties:
       type: select
       values:
         - label: True
-          value: "0"
+          value: " "
         - label: False
           value: "1"
     - default: ""
@@ -64,7 +64,7 @@ additionalProperties:
     - default: ""
       envKey: DISABLE_FAST_LINK
       labelEn: If you want to disable parse settings from url
-      labelZh: 从链接解析预制设置
+      labelZh: 禁用链接解析设置
       required: true
       type: select
       values:
