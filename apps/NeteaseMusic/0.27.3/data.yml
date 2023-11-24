@@ -79,7 +79,7 @@ additionalProperties:
             value: "true"
           - label: False
             value: "false"
-      - default: ""
+      - default: "320000"
         envKey: MIN_BR
         labelEn: 允许的最低源音质，小于该值将被替换
         labelZh: 允许的最低源音质，小于该值将被替换
@@ -114,28 +114,24 @@ additionalProperties:
         envKey: JOOX_COOKIE
         labelEn: JOOX音源的wmid和session_key cookie
         labelZh: JOOX音源的wmid和session_key cookie
-        required: true
         rule: paramComplexity
         type: text
       - default: ""
         envKey: MIGU_COOKIE
         labelEn: 咪咕音源的 aversionid cookie
         labelZh: 咪咕音源的 aversionid cookie
-        required: true
         rule: paramComplexity
         type: text
       - default: ""
         envKey: QQ_COOKIE
         labelEn: QQ 音源的 uin 和 qm_keyst cookie
         labelZh: QQ 音源的 uin 和 qm_keyst cookie
-        required: true
         rule: paramComplexity
         type: text
       - default: ""
         envKey: YOUTUBE_KEY
         labelEn: Youtube 音源的 Data API v3 Key
         labelZh: Youtube 音源的 Data API v3 Key
-        required: true
         rule: paramComplexity
         type: text
       - default: 28080
