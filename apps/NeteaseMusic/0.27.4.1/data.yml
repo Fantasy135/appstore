@@ -1,0 +1,163 @@
+additionalProperties:
+    formFields:
+      - default: ""
+        envKey: ENABLE_FLAC
+        labelEn: 激活无损
+        labelZh: 激活无损
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: False
+            value: "false"
+      - default: ""
+        envKey: ENABLE_LOCAL_VIP
+        labelEn: 激活本地黑胶VIP
+        labelZh: 激活本地黑胶VIP
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: CVIP
+            value: "cvip"
+          - label: SVIP
+            value: "svip"
+      - default: ""
+        envKey: ENABLE_HTTPDNS
+        labelEn: 激活网易HTTPDNS查询故障
+        labelZh: 激活网易HTTPDNS查询故障
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: False
+            value: "false"
+      - default: ""
+        envKey: BLOCK_ADS
+        labelEn: 增强应用内部分广告
+        labelZh: 增强应用内部分广告
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: False
+            value: "false"
+      - default: ""
+        envKey: DISABLE_UPGRADE_CHECK
+        labelEn: 取消更新检测
+        labelZh: 取消更新检测
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: False
+            value: "false"
+      - default: ""
+        envKey: FOLLOW_SOURCE_ORDER
+        labelEn: 严格按照配置音源的顺序进行查询
+        labelZh: 严格按照配置音源的顺序进行查询
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: False
+            value: "false"
+      - default: ""
+        envKey: JSON_LOG
+        labelEn: 输出机器的注释 JSON 记录格式
+        labelZh: 输出机器的注释 JSON 记录格式
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: False
+            value: "false"
+      - default: "320000"
+        envKey: MIN_BR
+        labelEn: 允许的最低源音质，小于该值将被替换
+        labelZh: 允许的最低源音质，小于该值将被替换
+        required: true
+        rule: paramCommon
+        type: text
+      - default: ""
+        envKey: SELECT_MAX_BR
+        labelEn: 日志输出等级
+        labelZh: 日志输出等级
+        required: true
+        type: select
+        values:
+          - label: Debug
+            value: "debug"
+          - label: Info
+            value: "info"
+          - label: Error
+            value: "error"
+      - default: ""
+        envKey: SEARCH_ALBUM
+        labelEn: 在其他音源搜索歌曲时填写专辑名称
+        labelZh: 在其他音源搜索歌曲时填写专辑名称
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: False
+            value: "false"
+      - default: ""
+        envKey: JOOX_COOKIE
+        labelEn: JOOX音源的wmid和session_key cookie
+        labelZh: JOOX音源的wmid和session_key cookie
+        required: true
+        rule: paramComplexity
+        type: text
+      - default: ""
+        envKey: MIGU_COOKIE
+        labelEn: 咪咕音源的 aversionid cookie
+        labelZh: 咪咕音源的 aversionid cookie
+        required: true
+        rule: paramComplexity
+        type: text
+      - default: ""
+        envKey: QQ_COOKIE
+        labelEn: QQ 音源的 uin 和 qm_keyst cookie
+        labelZh: QQ 音源的 uin 和 qm_keyst cookie
+        required: true
+        rule: paramComplexity
+        type: text
+      - default: ""
+        envKey: YOUTUBE_KEY
+        labelEn: Youtube 音源的 Data API v3 Key
+        labelZh: Youtube 音源的 Data API v3 Key
+        required: true
+        rule: paramComplexity
+        type: text
+      - default: 28080
+        edit: true
+        envKey: PANEL_APP_PORT_HTTP
+        labelEn: HTTP Port
+        labelZh: HTTP端口
+        required: true
+        rule: paramPort
+        type: number
+      - default: 28081
+        edit: true
+        envKey: PANEL_APP_PORT_HTTPS
+        labelEn: HTTPS Port
+        labelZh: HTTPS端口
+        required: true
+        rule: paramPort
+        type: number
+      - default: ./data
+        disabled: true
+        envKey: DATA_PATH
+        labelEn: SSL folder path
+        labelZh: SSL证书文件夹路径
+        required: true
+        type: text
