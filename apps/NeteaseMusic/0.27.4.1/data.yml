@@ -79,7 +79,7 @@ additionalProperties:
             value: "true"
           - label: False
             value: "false"
-      - default: "320000"
+      - default: 320000
         envKey: MIN_BR
         labelEn: 允许的最低源音质，小于该值将被替换
         labelZh: 允许的最低源音质，小于该值将被替换
