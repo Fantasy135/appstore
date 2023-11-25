@@ -1,6 +1,6 @@
 version: '3'
 services:
-  neteasemusic:
+  NeteaseMusic:
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
@@ -12,19 +12,19 @@ services:
       - "${DATA_PATH}/server.crt:/data/ssl/server.crt"
       - "${DATA_PATH}/server.key:/data/ssl/server.key"
     environment:
-      - ENABLE_FLAC=true
-      - ENABLE_LOCAL_VIP="cvip"
-      - ENABLE_HTTPDNS=false
-      - BLOCK_ADS=false
-      - DISABLE_UPGRADE_CHECK=true
-      - FOLLOW_SOURCE_ORDER=true
-      - JSON_LOG=false
-      - MIN_BR=320000
-      - SELECT_MAX_BR=true
-      - LOG_LEVEL=debug
-      - SEARCH_ALBUM=true
-      - SIGN_CERT=/data/ssl/server.crt
-      - SIGN_KEY=/data/ssl/server.key
+      ENABLE_FLAC: ${ENABLE_FLAC}
+      ENABLE_LOCAL_VIP: ${ENABLE_LOCAL_VIP}
+      ENABLE_HTTPDNS: ${ENABLE_HTTPDNS}
+      BLOCK_ADS: ${BLOCK_ADS}
+      DISABLE_UPGRADE_CHECK: ${DISABLE_UPGRADE_CHECK}
+      FOLLOW_SOURCE_ORDER: ${FOLLOW_SOURCE_ORDER}
+      JSON_LOG: ${JSON_LOG}
+      MIN_BR: ${MIN_BR}
+      SELECT_MAX_BR: ${SELECT_MAX_BR}
+      LOG_LEVEL: ${LOG_LEVEL}
+      SEARCH_ALBUM: ${SEARCH_ALBUM}
+      SIGN_CERT: /data/ssl/server.crt
+      SIGN_KEY: /data/ssl/server.key
     #command: ["-o", "bilibili"]  # 设置要传递给容器的参数
     image: pan93412/unblock-netease-music-enhanced:v0.27.4-patch.1
     labels:  

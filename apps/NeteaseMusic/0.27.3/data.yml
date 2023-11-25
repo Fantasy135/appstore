@@ -88,6 +88,17 @@ additionalProperties:
         type: text
       - default: ""
         envKey: SELECT_MAX_BR
+        labelEn: 选择所有音源中的最高码率替换音频
+        labelZh: 选择所有音源中的最高码率替换音频
+        required: true
+        type: select
+        values:
+          - label: True
+            value: "true"
+          - label: False
+            value: "false"
+      - default: ""
+        envKey: LOG_LEVEL
         labelEn: 日志输出等级
         labelZh: 日志输出等级
         required: true
