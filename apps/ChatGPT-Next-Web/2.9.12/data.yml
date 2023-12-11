@@ -8,7 +8,7 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
-    - default: chatgpt
+    - default: "chatgpt"
       envKey: CODE
       labelEn: Access password, separated by comma.
       labelZh: 访问密码，用逗号隔开多个密码
@@ -36,7 +36,7 @@ additionalProperties:
       type: select
       values:
         - label: True
-          value: " "
+          value: ""
         - label: False
           value: "1"
     - default: ""
@@ -47,7 +47,7 @@ additionalProperties:
       type: select
       values:
         - label: True
-          value: " "
+          value: ""
         - label: False
           value: "1"
     - default: ""
@@ -72,7 +72,7 @@ additionalProperties:
           value: "1"
         - label: False
           value: "0"
-    - default: ""
+    - default: "+all"
       envKey: CUSTOM_MODELS
       labelEn: To control custom models, use + to add a custom model, use - to hide a model, separated by comma
       labelZh: 用来控制模型列表，使用 + 增加一个模型，使用 - 来隐藏一个模型，用英文逗号隔开
