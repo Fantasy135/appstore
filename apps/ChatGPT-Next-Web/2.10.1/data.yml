@@ -1,0 +1,85 @@
+additionalProperties:
+  formFields:
+    - default: ""
+      edit: true
+      envKey: OPENAI_API_KEY
+      labelEn: Your openai api key, join multiple api keys with comma.
+      labelZh: OpanAI 密钥，用逗号隔开多个
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "chatgpt"
+      envKey: CODE
+      labelEn: Access password, separated by comma.
+      labelZh: 访问密码，用逗号隔开多个密码
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "https://api.openai.com"
+      envKey: BASE_URL
+      labelEn: Override openai api request base url.
+      labelZh: OpenAI 接口 URL
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: OPENAI_ORG_ID
+      labelEn: Specify OpenAI organization ID.
+      labelZh: 指定 OpenAI 中的组织 ID
+      rule: paramComplexity
+      type: text
+    - default: ""
+      envKey: HIDE_USER_API_KEY
+      labelEn: If you do not want users to input their own API key
+      labelZh: 用户自行填入 API Key
+      type: select
+      values:
+        - label: True
+          value: ""
+        - label: False
+          value: "1"
+    - default: ""
+      envKey: DISABLE_GPT4
+      labelEn: If you do not want users to use GPT-4
+      labelZh: 用户使用 GPT-4
+      type: select
+      values:
+        - label: True
+          value: ""
+        - label: False
+          value: "1"
+    - default: ""
+      envKey: ENABLE_BALANCE_QUERY
+      labelEn: If you do want users to query balance
+      labelZh: 启用余额查询功能
+      required: true
+      type: select
+      values:
+        - label: True
+          value: "1"
+        - label: False
+          value: "0"
+    - default: ""
+      envKey: DISABLE_FAST_LINK
+      labelEn: If you want to disable parse settings from url
+      labelZh: 禁用链接解析设置
+      required: true
+      type: select
+      values:
+        - label: True
+          value: "1"
+        - label: False
+          value: "0"
+    - default: "+all"
+      envKey: CUSTOM_MODELS
+      labelEn: To control custom models, use + to add a custom model, use - to hide a model, separated by comma
+      labelZh: 用来控制模型列表，使用 + 增加一个模型，使用 - 来隐藏一个模型，用英文逗号隔开
+      rule: paramCommon
+      type: text
+    - default: 3000
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 应用端口
+      required: true
+      rule: paramPort
+      type: number
