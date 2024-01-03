@@ -34,7 +34,6 @@ additionalProperties:
       envKey: GOOGLE_URL
       labelEn: Google Gemini Pro Api url.
       labelZh: Google Gemini Pro Api 网址
-      required: true
       rule: paramExtUrl
       type: text
     - default: ""
