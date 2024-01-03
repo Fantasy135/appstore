@@ -11,8 +11,8 @@ additionalProperties:
     - default: ""
       edit: true
       envKey: GOOGLE_API_KEY
-      labelEn: Your openai api key, join multiple api keys with comma.
-      labelZh: OpanAI 密钥，用逗号隔开多个
+      labelEn: Google Gemini Pro Api key.
+      labelZh: Google Gemini Pro Api 密钥.
       required: true
       rule: paramComplexity
       type: password
