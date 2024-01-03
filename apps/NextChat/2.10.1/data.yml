@@ -8,6 +8,14 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
+    - default: ""
+      edit: true
+      envKey: GOOGLE_API_KEY
+      labelEn: Your openai api key, join multiple api keys with comma.
+      labelZh: OpanAI 密钥，用逗号隔开多个
+      required: true
+      rule: paramComplexity
+      type: password
     - default: "chatgpt"
       envKey: CODE
       labelEn: Access password, separated by comma.
@@ -19,6 +27,13 @@ additionalProperties:
       envKey: BASE_URL
       labelEn: Override openai api request base url.
       labelZh: OpenAI 接口 URL
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: GOOGLE_URL
+      labelEn: Google Gemini Pro Api url.
+      labelZh: Google Gemini Pro Api 网址
       required: true
       rule: paramExtUrl
       type: text

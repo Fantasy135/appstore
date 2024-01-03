@@ -1,16 +1,16 @@
-name: ChatGPT-next-web
+name: NextChat
 tags:
   - 实用工具
-title: ChatGPT-next-web
+title: NextChat
 type: 工具
 description: 实用工具
 additionalProperties:
-  key: ChatGPT-Next-Web
-  name: ChatGPT-Next-Web
+  key: NextChat
+  name: NextChat
   tags:
     - Tool
-  shortDescZh: ChatGPT-next-web
-  shortDescEn: ChatGPT-next-web
+  shortDescZh: NextChat
+  shortDescEn: NextChat
   type: tool
   crossVersionUpdate: true
   limit: 0
