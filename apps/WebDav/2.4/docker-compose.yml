@@ -1,0 +1,25 @@
+version: '3'
+services:
+  WebDav:
+    image: bytemark/webdav:v2.4
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:80
+      - ${PANEL_APP_PORT_HTTPS}:443
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+      SERVER_NAMES: ${SERVER_NAMES}
+      LOCATION: ${LOCATION}
+      AUTH_TYPE: ${AUTH_TYPE}
+      REALM: ${REALM}
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}
+      ANONYMOUS_METHODS: ${ANONYMOUS_METHODS}
+      SSL_CERT: ${SSL_CERT}
+    volumes:
+      - /srv/dav:/var/lib/dav
+networks:
+  1panel-network:
+    external: true
