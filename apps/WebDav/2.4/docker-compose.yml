@@ -1,7 +1,7 @@
 version: '3'
 services:
   WebDav:
-    image: bytemark/webdav:v2.4
+    image: bytemark/webdav
     container_name: ${CONTAINER_NAME}
     ports:
       - ${PANEL_APP_PORT_HTTP}:80
