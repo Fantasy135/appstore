@@ -38,7 +38,7 @@ additionalProperties:
       labelEn: Authenticate with this username (and the password below).
       labelZh: 使用此用户名（和下面的密码）进行身份验证
       required: true
-      rule: paramComplexity
+      rule: paramCommon
       type: text
     - default: "adminPass"
       envKey: PASSWORD
@@ -58,7 +58,7 @@ additionalProperties:
       envKey: SSL_CERT
       labelEn: Set to selfsigned to generate a self-signed certificate and enable Apache's SSL module. If you specify SERVER_NAMES, the first domain is set as the Common Name.
       labelZh: 设置selfsigned为生成自签名证书并启用Apache的SSL模块。如果指定SERVER_NAMES，则第一个域将设置为公用名。
-      rule: paramComplexity
+      rule: paramCommon
       type: text
     - default: 90
       envKey: PANEL_APP_PORT_HTTP
