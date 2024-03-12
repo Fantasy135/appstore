@@ -1,0 +1,25 @@
+version: '3'
+services:
+  ChatGPT-Next-Web:
+    image: yidadaa/chatgpt-next-web:v2.11.2
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:3000
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      CODE: ${CODE}
+      BASE_URL: ${BASE_URL}
+      GOOGLE_URL: ${GOOGLE_URL}
+      OPENAI_ORG_ID: ${OPENAI_ORG_ID}
+      HIDE_USER_API_KEY: ${HIDE_USER_API_KEY}
+      DISABLE_GPT4: ${DISABLE_GPT4}
+      ENABLE_BALANCE_QUERY: ${ENABLE_BALANCE_QUERY}
+      DISABLE_FAST_LINK: ${DISABLE_FAST_LINK}
+      CUSTOM_MODELS: ${CUSTOM_MODELS}
+networks:
+  1panel-network:
+    external: true
