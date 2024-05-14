@@ -34,9 +34,9 @@ additionalProperties:
       labelZh: 用户自行填入 API Key
       type: select
       values:
-        - label: True
+        - label: "True"
           value: ""
-        - label: False
+        - label: "False"
           value: "1"
     - default: ""
       envKey: DISABLE_GPT4
@@ -44,9 +44,9 @@ additionalProperties:
       labelZh: 用户使用 GPT-4
       type: select
       values:
-        - label: True
+        - label: "True"
           value: ""
-        - label: False
+        - label: "False"
           value: "1"
     - default: ""
       envKey: ENABLE_BALANCE_QUERY
@@ -55,9 +55,9 @@ additionalProperties:
       required: true
       type: select
       values:
-        - label: True
+        - label: "True"
           value: "1"
-        - label: False
+        - label: "False"
           value: "0"
     - default: ""
       envKey: DISABLE_FAST_LINK
@@ -66,9 +66,9 @@ additionalProperties:
       required: true
       type: select
       values:
-        - label: True
+        - label: "True"
           value: "1"
-        - label: False
+        - label: "False"
           value: "0"
     - default: "+all"
       envKey: CUSTOM_MODELS
