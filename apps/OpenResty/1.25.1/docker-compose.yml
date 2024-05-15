@@ -4,7 +4,7 @@ services:
     image: fantasy325/openresty:1.0.0
     container_name: ${CONTAINER_NAME}
     restart: always
-    network_mode: host
+    network_mode: ${NETWORKS}
     volumes:
       - ./conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
       - ./conf/fastcgi_params:/usr/local/openresty/nginx/conf/fastcgi_params

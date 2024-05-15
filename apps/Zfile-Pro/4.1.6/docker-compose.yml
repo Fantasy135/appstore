@@ -5,7 +5,7 @@ services:
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
-      - 1panel-network
+      - ${NETWORKS}
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
     volumes:

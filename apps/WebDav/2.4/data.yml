@@ -74,3 +74,16 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
+    - default: host
+      envKey: NETWORKS
+      labelEn: 选择网卡
+      labelZh: 在其他音源搜索歌曲时填写专辑名称
+      required: true
+      type: select
+      values:
+        - label: "host"
+          value: host
+        - label: "1panel-network"
+          value: 1panel-network
+        - label: "no-clash"
+          value: no-clash

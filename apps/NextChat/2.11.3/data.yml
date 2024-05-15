@@ -108,5 +108,5 @@ additionalProperties:
           value: host
         - label: "1panel-network"
           value: 1panel-network
-        - label: "bridge"
-          value: bridge
+        - label: "no-clash"
+          value: no-clash
