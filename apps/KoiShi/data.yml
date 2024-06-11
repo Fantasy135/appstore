@@ -1,0 +1,20 @@
+name: KoiShi
+tags:
+  - KoiShi
+title: KoiShi
+type: 插件市场
+description: Koishi 是一个跨平台、可扩展、高性能的聊天机器人框架
+additionalProperties:
+  key: KoiShi
+  name: KoiShi
+  tags:
+    - KoiShi
+  shortDescZh: KoiShi
+  shortDescEn: Koishi is a cross-platform, scalable, high-performance chatbot framework, secure, and quickly deployable.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/NapNeko/NapCat-Docker
+  github: https://github.com/NapNeko/NapCat-Docker
+  document: https://github.com/NapNeko/NapCat-Docker
