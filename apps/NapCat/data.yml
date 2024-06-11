@@ -1,0 +1,20 @@
+name: NapCat
+tags:
+  - qq机器人
+title: NapCatQQ
+type: 机器人
+description: NapCatQQ 是基于 PC NTQQ 客户端本体实现的 QQ Bot 框架，稳定安全，快速部署。
+additionalProperties:
+  key: Zfile-Pro
+  name: ZFile-pro
+  tags:
+    - qqCat
+  shortDescZh: NapCatQQ
+  shortDescEn: NapCatQQ is a QQ Bot framework based on the PC NTQQ client body, which is stable, secure, and quickly deployable.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/NapNeko/NapCat-Docker
+  github: https://github.com/NapNeko/NapCat-Docker
+  document: https://github.com/NapNeko/NapCat-Docker
