@@ -11,6 +11,9 @@ services:
       - "${PANEL_APP_PORT_HTTPS}:6099"
     volumes:
       - '/usr/local/share/napcat://usr/src/app/napcat/config'
+    environment:
+      ACCOUNT: ${ACCOUNT}
+      WS_ENABLE: ${WS_ENABLE}
     labels:
       createdBy: "Apps"
 networks:
