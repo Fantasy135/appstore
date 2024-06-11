@@ -27,22 +27,9 @@ additionalProperties:
        type: number
     -  default: 6099
        edit: true
-       envKey: PANEL_APP_PORT_HTTPS
+       envKey: PANEL_APP_PORT_HTTP
        labelEn: Port
        labelZh: 端口
        required: true
        rule: paramPort
        type: number
-    -  default: host
-       envKey: NETWORKS
-       labelEn: 选择网卡
-       labelZh: 在其他音源搜索歌曲时填写专辑名称
-       required: true
-       type: select
-       values:
-        - label: "host"
-          value: host
-        - label: "1panel-network"
-          value: 1panel-network
-        - label: "no-clash"
-          value: no-clash
