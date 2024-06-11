@@ -5,8 +5,8 @@ title: NapCatQQ
 type: 机器人
 description: NapCatQQ 是基于 PC NTQQ 客户端本体实现的 QQ Bot 框架，稳定安全，快速部署。
 additionalProperties:
-  key: Zfile-Pro
-  name: ZFile-pro
+  key: NapCat
+  name: NapCat
   tags:
     - qqCat
   shortDescZh: NapCatQQ
