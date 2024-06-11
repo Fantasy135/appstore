@@ -14,9 +14,9 @@ additionalProperties:
        type: select
        values:
          -  label: "True"
-            value: True
+            value: "True"
          -  label: "False"
-            value: False
+            value: "False"
     -  default: 3001
        edit: true
        envKey: PANEL_APP_PORT_HTTP
