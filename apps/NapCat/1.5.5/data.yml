@@ -1,0 +1,35 @@
+additionalProperties:
+  formFields:
+    -  default: ""
+       envKey: ACCOUNT
+       labelEn: QQ
+       labelZh: QQ
+       required: true
+       rule: paramComplexity
+       type: text
+    -  default: ""
+       envKey: WS_ENABLE
+       labelEn: WS 协议
+       labelZh: WS 协议
+       type: select
+       values:
+         -  label: "True"
+            value: "true"
+         -  label: "False"
+            value: "false"
+    -  default: 3001
+       edit: true
+       envKey: PANEL_APP_PORT_HTTP
+       labelEn: Port
+       labelZh: 端口
+       required: true
+       rule: paramPort
+       type: number
+    -  default: 6099
+       edit: true
+       envKey: PANEL_APP_PORT_HTTPS
+       labelEn: Port
+       labelZh: 端口
+       required: true
+       rule: paramPort
+       type: number
