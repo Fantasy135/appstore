@@ -1,0 +1,17 @@
+name: Auto
+tags:
+  - Auto
+title: Auto
+type: 自动化任务
+description: 一个自动化任务管理框架
+additionalProperties:
+  key: Auto
+  name: Auto
+  tags:
+    - Auto
+  shortDescZh: Auto
+  shortDescEn: An automated task management framework
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
