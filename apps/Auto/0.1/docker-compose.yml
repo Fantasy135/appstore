@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   zfile:
-    image: fantasy325/auto-sign-in:v0.1
+    image: fantasy325/auto:v0.1
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
