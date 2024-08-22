@@ -1,0 +1,39 @@
+version: '3'
+services:
+  NeteaseMusic:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - ${NETWORKS}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+      - "${PANEL_APP_PORT_HTTPS}:8081"
+    volumes:
+      - "${DATA_PATH}/server.crt:/data/ssl/server.crt"
+      - "${DATA_PATH}/server.key:/data/ssl/server.key"
+    environment:
+      ENABLE_FLAC: ${ENABLE_FLAC}
+      ENABLE_LOCAL_VIP: ${ENABLE_LOCAL_VIP}
+      ENABLE_HTTPDNS: ${ENABLE_HTTPDNS}
+      BLOCK_ADS: ${BLOCK_ADS}
+      DISABLE_UPGRADE_CHECK: ${DISABLE_UPGRADE_CHECK}
+      FOLLOW_SOURCE_ORDER: ${FOLLOW_SOURCE_ORDER}
+      JSON_LOG: ${JSON_LOG}
+      MIN_BR: ${MIN_BR}
+      SELECT_MAX_BR: ${SELECT_MAX_BR}
+      LOG_LEVEL: ${LOG_LEVEL}
+      SEARCH_ALBUM: ${SEARCH_ALBUM}
+      SIGN_CERT: /data/ssl/server.crt
+      SIGN_KEY: /data/ssl/server.key
+      JOOX_COOKIE: ${JOOX_COOKIE}
+      MIGU_COOKIE: ${MIGU_COOKIE}
+      QQ_COOKIE: ${QQ_COOKIE}
+      YOUTUBE_KEY: ${YOUTUBE_KEY}
+    #command: ["-o", "bilibili"]  # 设置要传递给容器的参数
+    image: pan93412/unblock-netease-music-enhanced:v0.27.8-patch.1
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true
