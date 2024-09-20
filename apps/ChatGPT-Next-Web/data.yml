@@ -4,7 +4,7 @@ tags:
 title: 一键拥有你自己的跨平台 ChatGPT/Gemini 应用
 description: 一键拥有你自己的跨平台 ChatGPT/Gemini 应用
 additionalProperties:
-  key: chatgpt-next-web
+  key: ChatGPT-Next-Web
   name: ChatGPT-Next-Web
   tags:
     - AI
