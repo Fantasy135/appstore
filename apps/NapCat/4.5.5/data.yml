@@ -1,18 +1,18 @@
 additionalProperties:
   formFields:
-    -  default: "1000"
+    -  default: 1000
        envKey: UID
        labelEn: UID
        labelZh: UID
        required: true
-       rule: paramComplexity
+       rule: paramCommon
        type: text
-    -  default: "1000"
+    -  default: 1000
        envKey: GID
        labelEn: GID
        labelZh: GID
        required: true
-       rule: paramComplexity
+       rule: paramCommon
        type: text
     -  default: 3000
        edit: true
