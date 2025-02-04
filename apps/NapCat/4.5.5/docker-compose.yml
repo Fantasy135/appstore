@@ -7,8 +7,9 @@ services:
     networks:
       - "1panel-network"
     ports:
-      - "${PANEL_APP_PORT_HTTP}:3001"
-      - "${PANEL_APP_PORT_HTTPS}:6099"
+      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_HTTP2}:3001"
+      - "${PANEL_APP_PORT_HTTP3}:6099"
     volumes:
       - '/usr/local/share/napcat://usr/src/app/napcat/config'
     environment:

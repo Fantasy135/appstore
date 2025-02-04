@@ -6,15 +6,15 @@ additionalProperties:
        labelZh: UID
        required: true
        rule: paramComplexity
-       type: number
+       type: text
     -  default: "1000"
        envKey: GID
        labelEn: GID
        labelZh: GID
        required: true
        rule: paramComplexity
-       type: number
-    -  default: 3001
+       type: text
+    -  default: 3000
        edit: true
        envKey: PANEL_APP_PORT_HTTP
        labelEn: Port
@@ -22,9 +22,17 @@ additionalProperties:
        required: true
        rule: paramPort
        type: number
+    -  default: 3001
+       edit: true
+       envKey: PANEL_APP_PORT_HTTP2
+       labelEn: Port
+       labelZh: 端口
+       required: true
+       rule: paramPort
+       type: number
     -  default: 6099
        edit: true
-       envKey: PANEL_APP_PORT_HTTPS
+       envKey: PANEL_APP_PORT_HTTP3
        labelEn: Port
        labelZh: 端口
        required: true
