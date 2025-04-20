@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  napcat:
+    image: mlikiowa/napcat-docker:v4.7.34
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - "1panel-network"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_HTTP2}:3001"
+      - "${PANEL_APP_PORT_HTTP3}:6099"
+    volumes:
+      - '/usr/local/share/napcat://usr/src/app/napcat/config'
+    environment:
+      NAPCAT_UID: ${NAPCATUID}
+      NAPCAT_GID: $NAPCATGID}
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true
