@@ -1,0 +1,61 @@
+additionalProperties:
+  formFields:
+    - default: MySQL
+      envKey: Waline_DB_TYPE
+      labelEn: Database
+      labelZh: 数据库服务
+      required: true
+      rule: paramCommon
+      type: select
+      values:
+        - label: MongoDB
+          value: MONGO
+        - label: MySQL
+          value: MYSQL
+        - label: PostgreSQL
+          value: PG
+    - default: 127.0.0.1
+      envKey: Waline_DB_HOST
+      required: true
+      labelEn: Database host
+      labelZh: 数据库地址
+      rule: paramCommon
+      type: text
+    - default: 3306
+      envKey: Waline_DB_PROT
+      labelEn: Database port
+      labelZh: 数据库端口
+      required: true
+      rule:  paramPort
+      type: number
+    - default: name
+      envKey: Waline_DB_NAME
+      labelEn: Database name
+      labelZh: 数据库名
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: name
+      envKey: Waline_DB_USER_NAME
+      labelEn: user name
+      labelZh: 用户名
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: halo
+      envKey: Waline_DB_USER_PASSWORD
+      labelEn: Database password
+      labelZh: 数据库用户密码
+      random: true
+      required: true
+      type: password
+    - default: 8360
+      edit: true
+      envKey: Waline_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number

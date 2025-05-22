@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  zfile:
+    image: lizheming/waline:1.32.3
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - ${Waline_APP_PORT_HTTP}:8360
+    environment:
+      - ${Waline_TYPE}_DB=${Waline_DB_NAME}
+      - ${Waline_TYPE}_USER=${Waline_DB_USER_NAME}
+      - ${Waline_TYPE}_PASSWORD=${Waline_DB_USER_PASSWORD}
+      - ${Waline_TYPE}_HOST=${Waline_DB_HOST}
+      - ${Waline_TYPE}_PORT=${Waline_DB_PROT}
+      - TZ=Asia/Shanghai
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true

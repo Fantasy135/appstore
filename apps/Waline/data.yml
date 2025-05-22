@@ -1,0 +1,20 @@
+name: Waline
+tags:
+  - 评论系统
+title: 一款简洁、安全的评论系统。
+type: 评论系统
+description: 一款简洁、安全的评论系统。
+additionalProperties:
+  key: Waline
+  name: Waline
+  tags:
+    - Storage
+  shortDescZh: 一款简洁、安全的评论系统。
+  shortDescEn: A simple comment system with backend support.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://waline.js.org/
+  github: https://github.com/walinejs/waline
+  document: https://waline.js.org/guide/get-started/
